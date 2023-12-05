@@ -1,5 +1,7 @@
 ## Using the Live Streaming Transcript From AssemblyAI & LeMUR to Get Clips
 
+**Note That This Repository is Shared Externally With Customers**
+
 ```process_stream.py```
 - add a file to /files
 - copy that file's path and add set the input_filename variable (line 71 in process_stream.py) 
