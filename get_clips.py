@@ -42,24 +42,20 @@ for start_time, end_time, grouped_text in grouped_sentences_data:
     embeddings[(start_time, end_time)] = embedder.encode(grouped_text)
 
 
-import requests
-lemur_endpoint = "https://api.assemblyai.com//lemur/v3/generate/"
+company_name = "YOUR COMPANY HERE" #fill this in
 
+#NOTE - fill in your own prompt below
 questions = [
         {
-            'context': f"""You are a helpful marketing assistant who works at Christ Church
+            'context': f"""You are a helpful marketing assistant who works at {company_name}.
 
-            You should identify the three most interesting chapters which we can use to create social media posts that promote the congregation.
+            You should identify the three most interesting chapters which we can use to create social media posts that promote the company & its products.
 
-            NOTE - you should ignore all church announcements, ceremonies, and events. You should focus entirely on the contents of the sermon during the service.
-
-            The church community is most interested in messages they can take with them throughout the week that will allow them to get closer to God.
-
-            You should select clips which contain emotional relevance to the broader community which are likely to be immediately engaging on social media.
+            You should select clips which contain emotional relevance to the company's target market.
 
             Provide exactly 3 quotes from the transcript, each of which should constitute between 45 seconds and 90 seconds of speech
             """,
-            'question': f"What are the 3 most engaging quotes from this church service which can be used as clips for social media?",
+            'question': f"What are the 3 most engaging quotes from this audio file which can be used as clips for social media?",
             'answer_format': "<quote one>\n<quote two>\n<quote three>"
         }
 ]
